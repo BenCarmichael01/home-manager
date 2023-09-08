@@ -98,7 +98,7 @@
 
       # Set prompt
       setopt PROMPT_SUBST
-      PROMPT='%n@%m %~/ %# '
+      PROMPT='%B%n@%m%b %~/ %# '
       
       # Bind ctrl+arrows 
       bindkey "^[[1;5C" forward-word
