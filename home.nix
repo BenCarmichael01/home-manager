@@ -126,6 +126,8 @@
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       fi
       # End nix
+
+      export GPG_TTY=$(tty)
     '';
     };
 }
