@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
-
+#with import <nixpkgs> {};
 {
   home.username = "ben";
   home.homeDirectory = "/var/home/ben";
@@ -34,7 +34,13 @@
     ".config/wofi-logout".source = dotfiles/.config/wofi-logout;
     ".config/kitty".source = dotfiles/.config/kitty;
     ".config/hypr".source = dotfiles/.config/hypr;
-    ".config/nvim".source = dotfiles/.config/nvim;
+#    ".config/nvim".source = fetchgit {
+#	url = "https://github.com/NvChad/NvChad.git";
+#	deepClone = true;
+#	fetchSubmodules = true;
+#	rev = "v2.0";
+#	sha256 = "67c520c402af0b6e44593fba53713c46340814dada0ea9470937228edff6d7dd";
+#    };
     
     # dir must be writable for ranger to run
     # ".config/ranger".source = dotfiles/.config/ranger;
