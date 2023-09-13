@@ -19,6 +19,7 @@
   home.packages = [
      (pkgs.nerdfonts.override { fonts = [ "RobotoMono" ]; })
      pkgs.roboto
+     pkgs.eza
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -96,6 +97,8 @@
         hconf="nvim $HMDOTS/.config/hypr/hyprland.conf";
         hmconf="nvim ~/.config/home-manager/home.nix";
         tbxe="toolbox enter";
+        ls="eza --icons --group-directories-first --width=80 -a";
+        ll="eza --icons --group-directories-first --width=80 --no-filesize -alo";
         };
       
       initExtraBeforeCompInit = "zstyle :compinstall filename '/var/home/ben/.zshrc' ";
