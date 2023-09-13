@@ -94,6 +94,7 @@
 
       shellAliases = {
         hconf="nvim $HMDOTS/.config/hypr/hyprland.conf";
+        hmconf="nvim ~/.config/home-manager/home.nix";
         tbxe="toolbox enter";
         };
       
