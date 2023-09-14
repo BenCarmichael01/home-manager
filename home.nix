@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 #with import <nixpkgs> {};
 {
   home.username = "ben";
@@ -20,6 +20,7 @@
      (pkgs.nerdfonts.override { fonts = [ "RobotoMono" ]; })
      pkgs.roboto
      pkgs.eza
+     pkgs.binutils
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -134,4 +135,12 @@
       export GPG_TTY=$(tty)
     '';
     };
+
+    home.activation = {
+      # Reload hyprland after home-manager files have been written 
+      reloadHyprland = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        echo "Reloading Hyprland...";
+        /usr/bin/hyprctl reload > /dev/null;
+        echo "Hyprland reloaded successfully";
+      '';};
 }
