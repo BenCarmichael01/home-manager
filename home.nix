@@ -97,6 +97,7 @@
       shellAliases = {
         hconf="nvim $HMDOTS/.config/hypr/hyprland.conf";
         hmconf="nvim ~/.config/home-manager/home.nix";
+        hmdir="cd ~/.config/home-manager/";
         tbxe="toolbox enter";
         ls="eza --icons --group-directories-first --width=80 -a";
         ll="eza --icons --group-directories-first --width=80 --no-filesize -alo";
